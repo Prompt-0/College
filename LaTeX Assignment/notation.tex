@@ -1,0 +1,76 @@
+% This chapter contains the content from PDF page 17
+
+\chapter*{Notation}
+\addcontentsline{toc}{chapter}{Notation}
+
+This section provides a concise reference describing the notation used throughout this book.
+
+\subsection*{Calculus}
+\begin{description}
+    \item[$\frac{dy}{dx}$] Derivative of y with respect to x
+
+    \item[$\frac{\partial y}{\partial x}$] Partial derivative of y with respect to x
+
+    \item[$\nabla_{x}y$] Gradient of y with respect to x
+
+    \item[$\nabla_{X}y$] Matrix derivatives of y with respect to X
+
+    \item[$\nabla_{\mathbf{X}}y$] Tensor containing derivatives of y with respect to $\mathbf{X}$
+
+    \item[$\frac{\partial f}{\partial x}$]
+    Jacobian matrix $J \in \mathbb{R}^{m \times n}$ of $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$
+
+    \item[$H(f)(x)$] The Hessian matrix of $f$ at input point $x$ (also
+$\nabla_x^2 f(x)$)
+
+    \item[$\int f(x)dx$] Definite integral over the entire domain of x
+
+    \item[$\int_S f(x)dx$] Definite integral with respect to x over the set S
+\end{description}
+
+\subsection*{Probability and Information Theory}
+\begin{description}
+    \item[$a \perp b$] The random variables a and b are independent
+
+    \item[$a \perp b | c$] They are conditionally independent given c
+
+    \item[$P(a)$] A probability distribution over a discrete variable
+
+    \item[$p(a)$] A probability distribution over a continuous variable, or over a variable whose type has not been specified
+
+    \item[$a \sim P$] Random variable a has distribution P
+
+    \item[$Var(f(x))$] Variance of $f(x)$ under $P(x)$
+
+    \item[$Cov(f(x), g(x))$] Covariance of $f(x)$ and $g(x)$ under $P(x)$
+
+    \item[$H(x)$] Shannon entropy of the random variable x
+
+    \item[$D_{KL}(P||Q)$] Kullback-Leibler divergence of P and Q
+
+    \item[$\mathcal{N}(x; \mu, \Sigma)$] Gaussian distribution over x with mean $\mu$ and covariance $\Sigma$
+\end{description}
+
+\subsection*{Functions}
+\begin{description}
+    \item[$f: \mathbb{A} \rightarrow \mathbb{B}$] The function $f$ with domain $\mathbb{A}$ and range $\mathbb{B}$
+
+    \item[$f \circ g$] Composition of the functions $f$ and $g$
+
+    \item[$f(x; \theta)$] % <-- FIX
+    A function of $x$ parametrized by $\theta$. (Sometimes we write $f(x)$ and omit the argument to lighten notation)
+
+    \item[$\log x$] Natural logarithm of $x$
+
+    \item[$\sigma(x)$] Logistic sigmoid, $\frac{1}{1+exp(-x)}$
+
+    \item[$\zeta(x)$] Softplus, $log(1+exp(x))$
+
+    \item[$||x||_p$] $L^p$ norm of $x$
+
+    \item[$||x||$] $L^2$ norm of $x$
+
+    \item[$x^+$] Positive part of $x$, i.e., $max(0, x)$
+
+    \item[$\mathbf{1}_{\text{condition}}$] 1 if the condition is true, 0 otherwise
+\end{description}

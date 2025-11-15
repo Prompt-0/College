@@ -1,0 +1,51 @@
+% This document demonstrates Task 1:
+% Document design, title, author, date, address, page dimensions,
+% margins, line spacing, footnotes, and orientation.
+
+% We choose 'article' class. '11pt' for font size, 'a4paper' for paper size.
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+% Use 'geometry' to set margins and orientation (landscape)
+\usepackage[landscape, top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec} % Allows use of modern fonts
+
+% Setup Babel for language support (English)
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+
+% Set default font to Noto Sans (a clean, modern font)
+\babelfont{rm}{Noto Sans}
+% --- END UNIVERSAL PREAMBLE BLOCK ---
+
+% Use 'setspace' to control line spacing
+\usepackage{setspace}
+
+% --- Title and Author Information ---
+\title{Demonstration of Document Design}
+\author{Your Name}
+% We can add an address or institution inside the \date command
+% Replaced \par with \\ which is the correct way to break lines here.
+\date{\today \\ \medskip \textit{123 University Ave, LaTeX City}}
+
+\begin{document}
+
+% This command generates the title block
+\maketitle
+
+% Apply one-and-a-half line spacing to the document
+\onehalfspacing
+
+\section{Introduction}
+
+This document demonstrates several key layout features. The page orientation is set to 'landscape', and the margins have been customized using the \texttt{geometry} package.
+
+We are also using \texttt{setspace} to set the line spacing to one-and-a-half. This can be changed to \texttt{\doublespacing} or \texttt{\singlespacing} as needed.
+
+This is a sentence that includes a footnote.\footnote{This is the text of the footnote. It appears at the bottom of the page.}
+
+\section{Conclusion}
+
+By adjusting the preamble, you have fine-grained control over the entire look and feel of your document before you even write the first word.
+
+\end{document}

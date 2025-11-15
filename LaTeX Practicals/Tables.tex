@@ -1,0 +1,68 @@
+% This document demonstrates Task 3:
+% Creating tables with captions, column/row spanning, and auto-fitting columns.
+
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+% --- END UNIVERSAL PREAMBLE BLOCK ---
+
+% 'booktabs' for professional horizontal lines
+\usepackage{booktabs}
+% 'multirow' for spanning rows
+\usepackage{multirow}
+% 'tabularx' for auto-fitting/wrapping columns
+\usepackage{tabularx}
+
+\begin{document}
+
+\section{Advanced Table Demonstration}
+
+As shown in Table~\ref{tab:example}, we can create complex tables.
+
+% 'table' is a floating environment that holds the table
+\begin{table}[htbp]
+  \centering % Center the table
+  \caption{Demonstration of Advanced Table Features} % Add caption
+  \label{tab:example} % Add a label for cross-referencing
+
+  % Use 'tabularx' to make the table the full text width.
+  % The 'X' column type will expand and wrap text to fill space.
+  % 'l' = left-aligned, 'c' = center-aligned
+  \begin{tabularx}{\textwidth}{l c c X}
+    \toprule % Top line from booktabs
+    \textbf{Student} & \textbf{Exam 1} & \textbf{Exam 2} & \textbf{Comments (Auto-fitting 'X' column)} \\
+    \midrule % Middle line from booktabs
+
+    % Example of \multicolumn
+    \multicolumn{4}{c}{\textbf{Mid-Term Results}} \\
+    \midrule
+
+    % Example of \multirow
+    \multirow{2}{*}{Alice} & 85 & 90 & Alice showed great improvement. This text will wrap if it gets long enough. \\
+     & (B) & (A-) & \small{Additional comment on new line} \\
+    \cmidrule(l){2-4} % A partial rule
+    
+    Bob & 92 & 88 & Bob's performance was consistent. \\
+    
+    \midrule
+    \multicolumn{2}{l}{Average Score} & 88.5 & --- \\
+    \bottomrule % Bottom line from booktabs
+  \end{tabularx}
+\end{table}
+
+This table demonstrates:
+\begin{itemize}
+    \item \texttt{caption} and \texttt{label} for captions and references.
+    % Fix: Use \string to print the command names as text instead of trying to execute them.
+    \item \texttt{booktabs} (\texttt{\string\toprule, \string\midrule, \string\bottomrule}) for clean lines.
+    \item \texttt{tabularx} with the \texttt{X} column for auto-fitting text.
+    \item \texttt{\string\multicolumn} to span a heading across four columns.
+    \item \texttt{\string\multirow} to span "Alice" across two rows.
+\end{itemize}
+
+\end{document}

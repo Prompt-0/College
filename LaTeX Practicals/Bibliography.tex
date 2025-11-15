@@ -1,0 +1,61 @@
+% This document demonstrates Task 6:
+% Creating a manual bibliography using the 'thebibliography'
+% environment and citing references in the text.
+
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+% --- END UNIVERSAL PREAMBLE BLOCK ---
+
+\begin{document}
+
+\section{Introduction}
+
+LaTeX provides built-in tools for managing references. We can cite sources directly in the text. For example, Knuth~\cite{knuth1984} wrote the book on \TeX.
+
+Other authors have also contributed significantly. Lamport~\cite{lamport1994} created LaTeX itself. Goossens et al.~\cite{goossens1994} wrote an essential guide.
+
+It is possible to cite multiple sources at once~\cite{knuth1984, lamport1994, tolsby2000}. A final reference might be on a related topic~\cite{kopka2003}.
+
+\section{Conclusion}
+
+The \texttt{thebibliography} environment automatically generates the "Bibliography" title and formats the list, linking the \texttt{\string\cite} commands to the \texttt{\string\bibitem} entries.
+
+% This environment creates the bibliography
+% The '9' is a placeholder that tells LaTeX the widest label will be
+% a single digit, for alignment. Use '99' for double digits.
+\begin{thebibliography}{9}
+
+\bibitem{knuth1984}
+D. E. Knuth. (1984).
+\textit{The \TeX book}.
+Addison-Wesley.
+
+\bibitem{lamport1994}
+L. Lamport. (1994).
+\textit{\LaTeX: A Document Preparation System}.
+Addison-Wesley.
+
+\bibitem{goossens1994}
+M. Goossens, F. Mittelbach, \& A. Samarin. (1994).
+\textit{The \LaTeX\ Companion}.
+Addison-Wesley.
+
+\bibitem{kopka2003}
+H. Kopka \& P. W. Daly. (2003).
+\textit{Guide to \LaTeX}.
+Addison-Wesley.
+
+\bibitem{tolsby2000}
+M. Tolsby. (2000).
+\textit{My Fictional Book on Typesetting}.
+Publisher of Interest.
+
+\end{thebibliography}
+
+\end{document}

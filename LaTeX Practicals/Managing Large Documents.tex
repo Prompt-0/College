@@ -1,0 +1,86 @@
+% This document demonstrates Task 7:
+% How to structure a large document with split files,
+% front matter, back matter, and a separate title page.
+%
+% NOTE: In a real-world scenario, the content for the title page,
+% preface, chapters, and appendix would be in separate .tex files.
+% They are included here directly to make this file
+% self-contained and runnable.
+
+% The 'book' class is ideal for large documents
+\documentclass[11pt, a4paper]{book}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+\babelfont{rm}{Noto Sans}
+% --- END UNIVERSAL PREAMBLE BLOCK ---
+
+\title{Managing a Large Document}
+\author{A. N. Author}
+\date{November 2025}
+
+\begin{document}
+
+% --- This would be in a separate file, e.g., 'titlepage.tex' ---
+% We use the 'titlepage' environment for a custom title page
+% that does not have page numbering.
+\begin{titlepage}
+    \centering
+    \vspace*{\stretch{1}}
+    {\Huge \bfseries Managing a Large Document}
+    \vspace{2cm}
+    {\Large A. N. Author}
+    \vspace{1cm}
+    {LaTeX University Press}
+    \vspace{\stretch{2}}
+    {November 2025}
+\end{titlepage}
+% --- End of 'titlepage.tex' content ---
+
+
+% 'frontmatter' uses Roman numerals for page numbers
+% and stops chapters from being numbered.
+\frontmatter
+
+% --- This would be in 'preface.tex' ---
+% \include{preface}
+\chapter{Preface}
+This is the preface. It appears before the main content.
+The page number for this page will be in Roman numerals (e.g., 'iii').
+% --- End of 'preface.tex' content ---
+
+\tableofcontents
+
+
+% 'mainmatter' switches to Arabic page numbers
+% and starts numbering chapters.
+\mainmatter
+
+% --- This would be in 'chapter1.tex' ---
+% \include{chapter1}
+\chapter{Introduction}
+This is the first chapter. The \texttt{\string\include{}} command would be used to pull in the content from \texttt{chapter1.tex}. Page numbering starts at '1'.
+% --- End of 'chapter1.tex' content ---
+
+
+% --- This would be in 'chapter2.tex' ---
+% \include{chapter2}
+\chapter{Methodology}
+This is the second chapter, which would be loaded from \texttt{chapter2.tex}.
+% --- End of 'chapter2.tex' content ---
+
+
+% 'backmatter' stops chapter numbering again
+% and is used for appendices, bibliographies, etc.
+\backmatter
+
+% --- This would be in 'appendix.tex' ---
+% \include{appendix}
+\chapter{Appendix A: Data}
+This is the appendix. The chapter is titled "Appendix A" automatically.
+% --- End of 'appendix.tex' content ---
+
+\end{document}
